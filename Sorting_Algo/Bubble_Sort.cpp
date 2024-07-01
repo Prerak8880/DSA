@@ -1,43 +1,25 @@
-// BUBBLE SORT
 #include<bits/stdc++.h>
 using namespace std;
 
-int partition(int arr[], int low, int high)
+void bubble_sort(int arr[], int n)
 {
-    int pivot = arr[high];
-    int i = low - 1;
-    
-    for(int j = low; j <= high - 1; j++)
-    {
-        if(arr[j] < pivot)
-        {
-            i++;
-            swap(arr[i], arr[j]);
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(arr[i] < arr[j])
+            {
+                swap(arr[i], arr[j]);
+            }
         }
-    }
-    
-    swap(arr[i+1], arr[high]);
-    return i+1;
-}
-
-void q_sort(int arr[], int low, int high)
-{
-    if(low < high)
-    {
-        int p = partition(arr,low,high);
-        q_sort(arr,low,p-1);
-        q_sort(arr,p+1,high);
     }
 }
 
 int main()
 {
-    int arr[]={7,4,1,86,5,2,29,6,13};
-    q_sort(arr,0,8);
+    int arr[]={7,4,1,8,5,2,9,6,3};
+    bubble_sort(arr,9);
     
-    for(int i=0; i<9; i++)
-    {
-        cout << arr[i] << " ";
+    for(int i=0; i<9; i++){
+        cout << arr[i] <<" ";
     }
     return 0;
 }
