@@ -15,7 +15,7 @@ int isPalindrome(string str)
         }
         
         left++;
-            right--;
+        right--;
         
     }
         return true;
