@@ -21,10 +21,6 @@ int minCoinSum(int coins[], int m, int sum){
             count++;
         }
     }
-    
-    
-
-    
     if(sum != 0) return -1;
     
     return count;
