@@ -1,25 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void toggleString(wstring &str) {
-    for (auto &ch : str) {
+int main() {
+    string str;
+    getline(cin, str);
     
-        if (iswlower(ch)) {
-            ch = towupper(ch);
-        } 
-        else if (iswupper(ch)) {
-            ch = towlower(ch);
+    for (auto &ch : str) {
+        if (islower(ch)) {
+            ch = toupper(ch);
+        } else if (isupper(ch)) {
+            ch = tolower(ch);
         }
     }
-}
-
-int main() {
-    wstring str;
-    getline(wcin, str);
-
-    toggleString(str);
-
-    wcout << str << endl;
-
+    
+    cout << str << endl;
     return 0;
 }
+
