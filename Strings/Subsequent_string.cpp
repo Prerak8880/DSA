@@ -1,36 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isSub(string s1, string s2, int n, int m)
-{
+int main() {
+    string str,substr;
+    getline(cin,str);
+    getline(cin,substr);
     
-    if(m == 0)
-    {
-        return true;
+    if(str.find(substr) != string::npos){
+        cout << "Yes";
     }
     
-    if(n == 0)
-    {
-        return false;
+    else{
+        cout << "No";
     }
-    
-    
-    if(s1[n-1] == s2[m-1])
-    {
-        return isSub(s1,s2,n-1,m-1);
-    }
-    
-    else
-        return isSub(s1,s2,n-1,m);
-        
-}
 
-int main()
-{
-    string s1,s2;
-    int n,m;
-    cin>>n>>m;
-    cin >> s1 >> s2;
-    cout<<boolalpha<<isSub(s1,s2,n,m);
     return 0;
 }
