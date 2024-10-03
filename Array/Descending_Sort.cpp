@@ -11,7 +11,9 @@ int main() {
         cin >> arr[i];
     }
     
-    sort(arr, arr+n);
+    sort(arr, arr+n, [](int a, int b){
+        return a>b;
+    });
     
     for (int num : arr) {
         cout << num << " ";
