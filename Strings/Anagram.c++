@@ -1,46 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int CHAR=256;
+int main() {
 
-bool isAnagram(string str1, string str2, int n ,  int m)
-{
-    if(n != m)
-    {
-        return false;
-    }
-    
-    int count[CHAR] = {0}; 
-    for(int i=0; i<n; i++)
-    {
-        count[str1[i]]++;
-        count[str2[i]]--;
-    }
-    
-    for(int i=0; i<CHAR; i++)
-    {
-        if(count[i] != 0)
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-int main()
-{
     string str1,str2;
-    cin>>str1>>str2;
+    getline(cin,str1);
+    getline(cin,str2);
     
-    if(isAnagram(str1, str2, str1.length(), str2.length()))
-    {
-        cout << "Anagram" << " ";
+    sort(str1.begin(),str1.end());
+    sort(str2.begin(),str2.end());
+    
+    if(str1.length() != str2.length()){
+        cout << "No";
+        return 0;
     }
     
-    else
-    {
-        cout << "No Anagram" << " ";
+    if(str1==str2){
+        cout << "Yes";
+    }
+    
+    else if(str1 != str2){
+        cout << "No";
     }
     
     return 0;
