@@ -1,18 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void permute(string str) {
-    sort(str.begin(), str.end());
+void permute(vector<int>& arr) {
+    sort(arr.begin(), arr.end());
 
     do {
-        cout << str << endl;
-    } while (next_permutation(str.begin(), str.end()));
+        for (int num : arr) {
+            cout << num << " ";
+        }
+        cout << endl;
+    } while (next_permutation(arr.begin(), arr.end()));
 }
 
 int main() {
-    string str;
-    getline(cin,str);
+    int n;
+    cin >> n;
 
-    permute(str);
+    vector<int> arr(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> arr[i];
+    }
+    permute(arr);
     return 0;
 }
